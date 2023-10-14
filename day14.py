@@ -158,6 +158,130 @@ b.save()
 b.loan()
 
 # Operator overloading
+# '+' operator
+
+print(12 + 23)  # 35
+print("hello "+" world") # "hello world"
+print([11,22,33]+[44,55,66]) # [11,22,33,44,55,66]
+
+# operator overloading
+class Bookx:
+    def __init__(self,x):
+        self.pages = x
+class Booky:
+    def __init__(self,y):
+        self.pages = y
+
+ramayan = Bookx(1200)
+mahabharat = Booky(2400)
+#print(ramayan + mahabharat)
+print(ramayan.pages+ mahabharat.pages)
+
+
+
+# program 2
+class Bookx:
+    def __init__(self,x):
+        self.pages = x
+
+    def __add__(self, other):
+        return self.pages + other.pages
+
+class Booky:
+    def __init__(self,y):
+        self.pages = y
+
+class BookZ:
+    def __init__(self,z):
+        self.pages = z
+    def __add__(self, other):
+        return self.pages + other
+
+ramayan = Bookx(12)
+mahabharat = Booky(13)
+vedas = BookZ(13)
+a = ramayan + mahabharat # 25
+print(vedas + a)
+#print(ramayan+mahabharat+vedas)
+
+# program 2
+
+class Bookx:
+    def __init__(self,page):
+        self.page = page
+    def __gt__(self, other):
+        return self.page > other.page
+class Booky:
+    def __init__(self,page):
+        self.page = page
+
+q1 = Bookx(23)
+q2 = Booky(34)
+print(q1 > q2)
+#print(q1.page > q2.page)
+
+
+# program 3 multiplication
+
+class Teacher:
+    def __init__(self,name,salary):
+        self.name = name
+        self.salaryperday = salary
+
+    def __mul__(self, other):
+        return  self.salaryperday * other.days
+
+class Attendance:
+    def __init__(self,days):
+        self.days = days
+
+
+amol = Teacher("amol rao",1200)
+amolq =  Attendance(23)
+print(amol * amolq)
+#print(amol.salaryperday *  amolq.days)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
